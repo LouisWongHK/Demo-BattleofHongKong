@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Battle of Hong Kong 1941</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="game-container">
+        <!-- Header with game stats -->
+        <div id="ui-header">
+            <div id="level-count">Level 0</div>
+            <div id="supplies">Supplies: <span id="supply-count">50</span></div>
+            <div id="wave-progress">Wave Progress: <span id="enemies-remaining">0/0</span></div>
+            <div id="wave-progress-bar-container">
+                <div id="wave-progress-bar">
+                    <img src="https://i.imgur.com/japanese_soldier_icon.png" alt="Japanese Soldier" class="progress-icon">
+                </div>
+            </div>
+            <div id="speed-controls">
+                <button id="speed-1x" class="speed-btn active">1x</button>
+                <button id="speed-2x" class="speed-btn">2x</button>
+                <button id="pause-btn">Pause</button>
+            </div>
+            <button id="start-wave">Start Wave</button>
+            <button id="redeploy-btn" title="Redeploy a soldier">
+                <img src="https://i.ebayimg.com/images/g/pfIAAOSw1QxfwrEQ/s-l1200.jpg" alt="Redeploy" style="width: 15px; height: 20px;"> Redeploy
+            </button>
+        </div>
+
+        <!-- Card container (replaces unit-selection) -->
+        <div id="card-container"></div>
+
+        <!-- Battlefield grid -->
+        <div id="battlefield"></div>
+
+        <!-- Region progress bar -->
+        <div id="region-bar">
+            <div class="region controlled" id="region-1" data-region="New Territories">
+                <span class="region-name">New Territories (1-10)</span>
+                <div class="level-blocks"></div>
+            </div>
+            <div class="region controlled" id="region-2" data-region="Kowloon">
+                <span class="region-name">Kowloon (11-20)</span>
+                <div class="level-blocks"></div>
+            </div>
+            <div class="region controlled" id="region-3" data-region="Hong Kong Island West">
+                <span class="region-name">Hong Kong Island West (21-30)</span>
+                <div class="level-blocks"></div>
+            </div>
+            <div class="region controlled" id="region-4" data-region="Hong Kong Island East">
+                <span class="region-name">Hong Kong Island East (31-40)</span>
+                <div class="level-blocks"></div>
+            </div>
+            <div id="level-icon">
+                <img src="https://i.imgur.com/rkEzkDE.png" alt="British Soldier">
+            </div>
+        </div>
+
+        <!-- Game over screen -->
+        <div id="game-over" class="game-over"></div>
+
+        <!-- Drag ghost for drag-and-drop -->
+        <div id="drag-ghost" style="position: absolute; pointer-events: none;"></div>
+    </div>
+    <audio id="shoot-sound" src="https://freesound.org/data/previews/276/276955_3249668-lq.mp3" preload="auto"></audio>
+    <script src="./scrpit.js"></script>
+</body>
+</html>
